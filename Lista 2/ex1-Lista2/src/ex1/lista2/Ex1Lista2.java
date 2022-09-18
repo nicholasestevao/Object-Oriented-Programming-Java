@@ -1,4 +1,3 @@
-
 package ex1.lista2;
 
 public class Ex1Lista2 {
