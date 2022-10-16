@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ex3.lista4;
+package ex3.lista5;
 
 /**
  *
  * @author isaac
  */
-public class Ex3Lista4 {
+public class Ex3Lista5 {
 
     /**
      * @param args the command line arguments
