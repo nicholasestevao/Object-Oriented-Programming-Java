@@ -11,10 +11,8 @@ public:
     radioRelogio();
     void liga();
     void desliga();
-    void setAlarme(int, int);
+    void setAlarme(int, int, string);
 
-private: 
-    string e;
 };
 #endif
 

@@ -5,8 +5,8 @@ using namespace std;
 radio::radio() {
     cout << "Executou construtor do radio."<<endl;
     ligado = false; 
-    //e = "Padrao";
-    //modo = "AM";
+    e = "Padrao";
+    modo = "AM";
 }
 
 void radio::liga(){
@@ -22,7 +22,7 @@ void radio::desliga(){
 radio::~radio() {
 }
 
-/*void radio::setEstacao(string e){
+void radio::setEstacao(string e){
     this->e = e;
 }
 void radio::trocarModo(){
@@ -31,5 +31,5 @@ void radio::trocarModo(){
     }else{
         this->modo = "AM";
     }
+    cout << "Modo: " <<this->modo << endl;
 }
-*/

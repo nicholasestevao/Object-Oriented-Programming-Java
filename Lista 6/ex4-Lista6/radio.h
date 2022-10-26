@@ -11,12 +11,12 @@ public:
     virtual void liga(); // Se esse método nao fosse virtual o dynamic binding nao funcionaria
     virtual void desliga();
     virtual ~radio();
-   // void setEstacao(string);
+    void setEstacao(string);
     void trocarModo();
 protected:
     bool ligado;
-    /*string e;
-    string modo;*/
+    string e;
+    string modo;
 };
 
 #endif

@@ -15,7 +15,8 @@ void radioRelogio::desliga(){
     ligado = false;
 }
 
-void radioRelogio::setAlarme(int h, int m){
+void radioRelogio::setAlarme(int h, int m, string e){
     relogio::setAlarme(h,m);
-    e = "Clube FM";
+    radio::setEstacao(e);
+    cout << "Alarme configurado: " <<  h<< ":" << m << " Estacao: " << e << endl;
 }
