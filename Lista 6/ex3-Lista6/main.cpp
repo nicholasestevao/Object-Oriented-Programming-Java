@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
     c.imprime();
     c = a*b;
     c.imprime();
-    double mod = a%;
+    double mod = ~a;
     cout << mod << endl;
     return 0;
 }
