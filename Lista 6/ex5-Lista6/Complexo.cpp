@@ -40,8 +40,8 @@ Complexo Complexo::operator*(const Complexo &outro) const{
     return Complexo((this->real*outro.real) - (this->imag*outro.imag), this->imag*outro.real + this->real*outro.imag);
 }
 
-/*double Complexo::operator%() const{   
+double Complexo::operator~() const{   
     return (sqrt(pow(this->real,2) + pow(this->imag,2)));
-}*/
+}
 
 

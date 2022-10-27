@@ -14,7 +14,7 @@ public:
     //Método soma nao altera nenhum dos objetos
     Complexo operator-(const Complexo &) const;
     Complexo operator*(const Complexo &) const;
-    //double operator%() const;
+    double operator~() const;
 private:
     double real;
     double imag;
