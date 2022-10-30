@@ -17,10 +17,11 @@ int main(int argc, char** argv) {
     ra.desliga();
     
     radioRelogio rr;
-    rr.setHora(11,00);
+    rr.setHora(11,0);
     rr.mostraHora();
     rr.liga();
-    rr.setAlarme(5,15,"Planeta Brasil");
+    rr.setAlarme(11,1,"Planeta Brasil");
+    ++rr;
     rr.trocarModo();
     rr.trocarModo();
     

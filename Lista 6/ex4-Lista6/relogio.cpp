@@ -36,6 +36,6 @@ void relogio::operator++(){
     }
     
     if(h==hA && m == mA){
-        cout<<"Alarme tocando";
+        cout<<"Alarme tocando" << endl;
     }
 }
