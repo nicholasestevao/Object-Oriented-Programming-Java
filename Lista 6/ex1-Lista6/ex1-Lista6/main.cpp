@@ -3,8 +3,8 @@
 #include <string>
 #include <cmath>
 #include <locale.h>
-#include "Quadrado.cpp"
-#include "Triangulo.cpp"
+#include "Quadrado.h"
+#include "Triangulo.h"
 using namespace std;
 
 int main(int arqc, char *argv[]){
