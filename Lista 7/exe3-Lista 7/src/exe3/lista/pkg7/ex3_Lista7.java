@@ -9,20 +9,25 @@ public class ex3_Lista7 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-            ArvoreBinaria<String> a = new ArvoreBinaria<String> ("E");
-            a.insercao("B");
-            a.insercao("A");
-            a.insercao("Z");
-            a.insercao("D");
+            ArvoreBinaria<String> a = new ArvoreBinaria<String> ();
+            
+            a.insere("E");
+            a.insere("B");
+            a.insere("A");
+            a.insere("Z");
+            a.insere("D");
             
             a.imprimeOrdenado();
+            
+            String busca = "C";
+            String remove = "E";
             
             System.out.println();
             System.out.println("====================");
             
-            System.out.println("Buscando \"E\" ");
+            System.out.println("Buscando \"" + busca + "\"");
             
-            if(a.buscaDado("E")) {
+            if(a.buscaDado(busca)) {
                 System.out.println("Achou!");
             } else {
                 System.out.println("Não achou");
@@ -31,9 +36,9 @@ public class ex3_Lista7 {
             System.out.println();
             System.out.println("====================");
             
-            System.out.println("Removendo \"E\" ");
+            System.out.println("Removendo \"" + remove + "\"");
             
-            a.removeDado("E");
+            a.removeDado(remove);
             
             System.out.println();
             a.imprimeOrdenado();
