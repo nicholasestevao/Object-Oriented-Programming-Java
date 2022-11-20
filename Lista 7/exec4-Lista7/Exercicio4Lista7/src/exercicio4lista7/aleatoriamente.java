@@ -1,3 +1,8 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package exercicio4lista7;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.lang.Math;
@@ -30,7 +35,7 @@ public class aleatoriamente {
         tempoFinal = (System.currentTimeMillis());
         tempo = (1.0)*(tempoFinal - tempoInicial);
         //double y;
-        System.out.printf("Tempo de leitura Array List: %.5f%n minutos", (tempo/60000));
+        System.out.printf("Tempo de leitura Array List: %.5f minutos%n", (tempo/60000));
     }
 
     public void atualizaListaAL(int indices){
@@ -41,7 +46,7 @@ public class aleatoriamente {
         }
         tempoFinal = (System.currentTimeMillis());
         tempo = (1.0)*(tempoFinal - tempoInicial);
-        System.out.printf("Tempo de Remoçao e escrita Array List: %.5f%n minutos", (tempo/60000));
+        System.out.printf("Tempo de Remoçao e escrita Array List: %.5f minutos%n", (tempo/60000));
     }
 
     public void getListaLL(int indices){
@@ -51,7 +56,7 @@ public class aleatoriamente {
         }
         tempoFinal = (System.currentTimeMillis());
         tempo = (1.0)*(tempoFinal - tempoInicial);
-        System.out.printf("Tempo de leitura Linked List: %.5f%n minutos", (tempo/60000));
+        System.out.printf("Tempo de leitura Linked List: %.5f minutos%n", (tempo/60000));
     }
     
     public void atualizaListaLL(int indices){
@@ -62,6 +67,6 @@ public class aleatoriamente {
         }
         tempoFinal = (System.currentTimeMillis());
         tempo = (1.0)*(tempoFinal - tempoInicial);
-        System.out.printf("Tempo de Remoçao e escrita Linked List: %.5f%n minutos", (tempo/60000));
+        System.out.printf("Tempo de Remoçao e escrita Linked List: %.5f minutos%n", (tempo/60000));
     }
 }
