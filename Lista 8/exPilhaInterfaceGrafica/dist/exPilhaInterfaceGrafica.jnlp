@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="exPilhaInterfaceGrafica.jnlp">
+  <information>
+    <title>exPilhaInterfaceGrafica</title>
+    <vendor>12689616</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="exPilhaInterfaceGrafica.jar" size="7182" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="800" height="600" main-class="expilhainterfacegrafica.ExPilhaInterfaceGrafica"  name="exPilhaInterfaceGrafica" />
+  <update check="always"/>
+</jnlp>
