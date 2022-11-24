@@ -56,7 +56,7 @@ public class PrincipalController implements Initializable {
                 tfItem.setText(pilha.pop());
                 lvPilha.getItems().remove(0);
                 exibirMensagem(Alert.AlertType.INFORMATION, "Sucesso na remocao", "Elemento removido corretamente");
-            }catch(PilhaCheia e){
+            }catch(PilhaVazia e){
                 exibirMensagem(Alert.AlertType.ERROR, "Erro na remocao", e.getMessage());
             }
         }
@@ -72,6 +72,7 @@ public class PrincipalController implements Initializable {
             try{
                 pilha.push(tfItem.getText());
                 lvPilha.getItems().add(0,tfItem.getText());
+                tfItem.setText("");
                 exibirMensagem(Alert.AlertType.INFORMATION, "Sucesso na insercao", "Elemento inserido corretamente");
             }catch(PilhaCheia e){
                 exibirMensagem(Alert.AlertType.ERROR, "Erro na inserção", e.getMessage());

@@ -5,23 +5,27 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="240.0" prefWidth="491.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="polinomiografica.PrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="polinomiografica.PrincipalController">
    <children>
-      <TextField fx:id="tfGrau0" layoutX="88.0" layoutY="25.0" />
-      <TextField fx:id="tfGrau1" layoutX="88.0" layoutY="63.0" />
-      <TextField fx:id="tfGrau2" layoutX="88.0" layoutY="95.0" />
-      <TextField fx:id="tfGrau3" layoutX="88.0" layoutY="129.0" />
-      <TextField fx:id="tfGrau4" layoutX="88.0" layoutY="161.0" />
-      <TextField fx:id="tfValorX" layoutX="308.0" layoutY="50.0" />
+      <TextField fx:id="tfGrau0" layoutX="131.0" layoutY="25.0" />
+      <TextField fx:id="tfGrau1" layoutX="131.0" layoutY="63.0" />
+      <TextField fx:id="tfGrau2" layoutX="131.0" layoutY="95.0" />
+      <TextField fx:id="tfGrau3" layoutX="131.0" layoutY="129.0" />
+      <TextField fx:id="tfGrau4" layoutX="131.0" layoutY="161.0" />
+      <TextField fx:id="tfValorX" layoutX="355.0" layoutY="72.0" />
       <Label layoutX="10.0" layoutY="29.0" text="Coef. grau 0:" />
       <Label layoutX="10.0" layoutY="67.0" text="Coef. grau 1:" />
       <Label layoutX="10.0" layoutY="99.0" text="Coef. grau 2:" />
       <Label layoutX="10.0" layoutY="133.0" text="Coef. grau 3:" />
-      <Label layoutX="10.0" layoutY="165.0" prefHeight="0.0" prefWidth="67.0" text="Coef. grau 4:" />
-      <TextField fx:id="tfGrau5" layoutX="88.0" layoutY="193.0" />
-      <Label layoutX="10.0" layoutY="197.0" prefHeight="0.0" prefWidth="67.0" text="Coef. grau 5:" />
-      <Label layoutX="355.0" layoutY="29.0" text="Valor de X:" />
-      <Button fx:id="bCalcular" layoutX="355.0" layoutY="83.0" mnemonicParsing="false" text="Calcular" />
-      <Label fx:id="lResultado" layoutX="341.0" layoutY="121.0" text="Resultado:" />
+      <Label layoutX="10.0" layoutY="165.0" prefHeight="18.0" prefWidth="90.0" text="Coef. grau 4:" />
+      <TextField fx:id="tfGrau5" layoutX="131.0" layoutY="193.0" />
+      <Label layoutX="10.0" layoutY="197.0" prefHeight="18.0" prefWidth="90.0" text="Coef. grau 5:" />
+      <Label layoutX="401.0" layoutY="42.0" text="Valor de X:" />
+      <Button fx:id="bGerarPolinomio" layoutX="463.0" layoutY="116.0" mnemonicParsing="false" onAction="#gerarPolinomio" text="Gerar Polinômio" />
+      <Label layoutX="356.0" layoutY="177.0" text="Resultado:" />
+      <Label layoutX="27.0" layoutY="242.0" text="Polinômio:" />
+      <Label fx:id="lbPolinomio" layoutX="122.0" layoutY="241.0" prefHeight="18.0" prefWidth="444.0" />
+      <Label fx:id="lbResultado" layoutX="443.0" layoutY="177.0" prefHeight="18.0" prefWidth="122.0" />
+      <Button fx:id="bCalcular1" layoutX="326.0" layoutY="116.0" mnemonicParsing="false" onAction="#calcular" text="Calcular" />
    </children>
 </AnchorPane>

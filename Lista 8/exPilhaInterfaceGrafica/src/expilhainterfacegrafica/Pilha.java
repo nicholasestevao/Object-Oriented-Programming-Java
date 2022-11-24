@@ -23,8 +23,8 @@ public class Pilha {
     }
     
     public void push(String elemento) throws PilhaCheia {
-        if (topo + 1 == tamanho)
-            throw new PilhaCheia("A pilha esta cheia");
+        /*if (topo + 1 == tamanho) // Adaptacao para pilhas de qualquer tamanho
+            throw new PilhaCheia("A pilha esta cheia");*/
         topo++;
         dados.add(elemento);
     }
@@ -35,4 +35,10 @@ public class Pilha {
         topo--;
         return dados.remove(topo + 1);
     }
+
+    public int getTamanho() {
+        return tamanho;
+    }
+    
+    
 }

@@ -1,5 +1,5 @@
 
-package polinomiosgrafica;
+package polinomiografica;
 
 import java.util.ArrayList;
 
@@ -12,15 +12,25 @@ public class Polinomio {
         this.grauMax = max;
     }
     
-    public void mostra(){
+    public String mostra(){
+        String retorno = new String("");
         for(int i=0; i<this.grauMax; i++){
             if(this.polinomio[i] != null){
-                System.out.print(this.polinomio[i].getCte()+ "*x^" + i + " + ");
+                System.out.print(this.polinomio[i].getCte()+ "*x^" + i);
+                retorno += this.polinomio[i].getCte()+ "*x^" + i;
+                if(this.polinomio[i+1] != null){
+                    System.out.print(" + ");
+                    retorno += " + ";
+                }
+                
             }            
         }
         if(this.polinomio[this.grauMax] != null){
                 System.out.println(this.polinomio[this.grauMax].getCte()+ "*x^" + this.grauMax);
+                retorno += this.polinomio[this.grauMax].getCte()+ "*x^" + this.grauMax;
             } 
+        System.out.println(retorno);
+        return retorno;
     }
     
     public void add(Termo termo){

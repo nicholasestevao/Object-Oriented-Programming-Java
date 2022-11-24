@@ -1,5 +1,5 @@
 
-package polinomiosgrafica;
+package polinomiografica;
 
 public class Termo {
     private int grau;

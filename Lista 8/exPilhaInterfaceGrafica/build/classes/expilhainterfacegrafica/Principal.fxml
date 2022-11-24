@@ -6,12 +6,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="247.0" prefWidth="386.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="expilhainterfacegrafica.PrincipalController">
+<AnchorPane id="AnchorPane" prefHeight="247.0" prefWidth="386.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="expilhainterfacegrafica.PrincipalController">
     <children>
         <Button fx:id="bPush" layoutX="40.0" layoutY="149.0" onAction="#clicouPush" text="Push" />
       <Button fx:id="bPop" layoutX="109.0" layoutY="149.0" mnemonicParsing="false" onAction="#clicouPop" text="Pop" />
-      <Label layoutX="24.0" layoutY="83.0" prefHeight="17.0" prefWidth="37.0" text="Item:" />
-      <TextField fx:id="tfItem" layoutX="24.0" layoutY="110.0" />
+      <Label layoutX="51.0" layoutY="84.0" prefHeight="17.0" prefWidth="37.0" text="Item:" />
+      <TextField fx:id="tfItem" layoutX="51.0" layoutY="110.0" prefHeight="26.0" prefWidth="102.0" />
       <Label layoutX="193.0" layoutY="14.0" prefHeight="17.0" prefWidth="37.0" text="Pilha:" />
       <ListView fx:id="lvPilha" layoutX="180.0" layoutY="35.0" prefHeight="200.0" prefWidth="200.0" />
     </children>
