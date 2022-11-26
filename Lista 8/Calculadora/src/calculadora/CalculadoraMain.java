@@ -3,28 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package caculadoragui;
+package calculadora;
 
 import javafx.application.Application;
-import static javafx.application.Application.launch;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
  *
  * @author isaac
  */
-public class CaculadoraGUI extends Application {
+public class CalculadoraMain extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Principal.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("GUI.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -32,6 +27,9 @@ public class CaculadoraGUI extends Application {
         stage.show();
     }
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         launch(args);
     }

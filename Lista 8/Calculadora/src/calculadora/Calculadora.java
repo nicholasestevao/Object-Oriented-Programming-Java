@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package caculadoragui;
+package calculadora;
 
 /**
  *
@@ -12,7 +12,7 @@ package caculadoragui;
 public class Calculadora {
     private double mem;
     
-    Calculadora() {
+    public Calculadora() {
         mem = 0.0;
     }
     
