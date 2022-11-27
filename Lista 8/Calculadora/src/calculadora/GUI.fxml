@@ -8,14 +8,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #282a36;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: #282a36;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calculadora.GUIController">
    <children>
       <Text fill="#50fa7b" layoutX="92.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Orbitron;" text="Numero A" textAlignment="CENTER">
          <font>
             <Font name="Monospaced Regular" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="_inputNumeroA" alignment="CENTER" layoutX="58.0" layoutY="177.0" style="-fx-background-color: #44475a; -fx-border-color: #f8f8f2; -fx-border-insets: -1px; -fx-border-width: 1px; -fx-border-radius: 3px;" text="0">
+      <TextField fx:id="_inputNumeroA" alignment="CENTER" layoutX="58.0" layoutY="177.0" style="-fx-background-color: #44475a; -fx-border-color: #f8f8f2; -fx-border-insets: -1px; -fx-border-width: 1px; -fx-border-radius: 3px; -fx-text-fill: black;" text="0">
          <font>
             <Font name="Monospaced Regular" size="18.0" />
          </font>
@@ -25,25 +25,25 @@
             <Font name="Monospaced Regular" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="_inputNumeroB" alignment="CENTER" cache="true" layoutX="434.0" layoutY="177.0" style="-fx-background-color: #44475a; -fx-border-color: #f8f8f2; -fx-border-insets: -1px; -fx-border-width: 1px; -fx-border-radius: 3px;" text="0">
+      <TextField fx:id="_inputNumeroB" alignment="CENTER" cache="true" layoutX="426.0" layoutY="177.0" style="-fx-background-color: #44475a; -fx-border-color: #f8f8f2; -fx-border-insets: -1px; -fx-border-width: 1px; -fx-border-radius: 3px; -fx-text-fill: black;" text="0">
          <font>
             <Font name="Monospaced Regular" size="18.0" />
          </font>
       </TextField>
-      <Button id="CalculateButton" fx:id="_calculate" layoutX="270.0" layoutY="347.0" mnemonicParsing="false" style="-fx-background-color: #bd93f9; -fx-border-radius: 3px; -fx-background-radius: 3px;" text="Calculate" textAlignment="CENTER" textFill="#f8f8f2">
+      <Button id="CalculateButton" fx:id="_calculate" layoutX="256.0" layoutY="342.0" mnemonicParsing="false" onAction="#calcular" style="-fx-background-color: #bd93f9; -fx-border-radius: 3px; -fx-background-radius: 3px;" text="Calculate" textAlignment="CENTER" textFill="#f8f8f2">
          <font>
-            <Font name="Monospaced Regular" size="14.0" />
+            <Font name="Monospaced Regular" size="18.0" />
          </font>
       </Button>
-      <MenuButton fx:id="_seletorOperacao" contentDisplay="CENTER" layoutX="263.0" layoutY="182.0" mnemonicParsing="false" style="-fx-background-color: #bd93f9; -fx-background-radius: 3px; -fx-border-radius: 3px;" text="Operation" textAlignment="CENTER" textFill="#f8f8f2" wrapText="true">
+      <MenuButton fx:id="_seletorOperacao" contentDisplay="CENTER" layoutX="248.0" layoutY="179.0" mnemonicParsing="false" style="-fx-background-color: #bd93f9; -fx-background-radius: 3px; -fx-border-radius: 3px;" text="Operation" textAlignment="CENTER" textFill="#f8f8f2" wrapText="true">
          <items>
-            <MenuItem fx:id="_somaOperacao" mnemonicParsing="false" text="+" />
-            <MenuItem fx:id="_subtracaoOperacao" mnemonicParsing="false" text="-" />
-            <MenuItem fx:id="_multiplicacaoOperacao" mnemonicParsing="false" text="*" />
-            <MenuItem fx:id="_divisaoOperacao" mnemonicParsing="false" text="/" />
+            <MenuItem fx:id="_somaOperacao" mnemonicParsing="false" onAction="#adicao" style="-fx-background-color: #bd93f9; -fx-border-insets: 0;" text="+" />
+            <MenuItem fx:id="_subtracaoOperacao" mnemonicParsing="false" onAction="#subtracao" text="-" />
+            <MenuItem fx:id="_multiplicacaoOperacao" mnemonicParsing="false" onAction="#multiplicacao" text="*" />
+            <MenuItem fx:id="_divisaoOperacao" mnemonicParsing="false" onAction="#divisao" text="/" />
          </items>
          <font>
-            <Font name="Monospaced Regular" size="14.0" />
+            <Font name="Monospaced Regular" size="17.0" />
          </font>
       </MenuButton>
       <Text fill="#50fa7b" layoutX="280.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: Orbitron;" text="Resultado" textAlignment="CENTER">
@@ -51,7 +51,7 @@
             <Font name="Monospaced Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="_result" alignment="CENTER" cache="true" editable="false" layoutX="246.0" layoutY="282.0" style="-fx-background-color: #44475a; -fx-border-color: #f8f8f2; -fx-border-insets: -1px; -fx-border-width: 1px; -fx-border-radius: 3px;" text="0">
+      <TextField fx:id="_result" alignment="CENTER" cache="true" editable="false" layoutX="246.0" layoutY="282.0" style="-fx-background-color: #44475a; -fx-border-color: #f8f8f2; -fx-border-insets: -1px; -fx-border-width: 1px; -fx-border-radius: 3px; -fx-text-fill: black;" text="0">
          <font>
             <Font name="Monospaced Regular" size="18.0" />
          </font>
