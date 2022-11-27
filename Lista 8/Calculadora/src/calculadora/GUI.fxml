@@ -35,9 +35,9 @@
             <Font name="Monospaced Regular" size="18.0" />
          </font>
       </Button>
-      <MenuButton fx:id="_seletorOperacao" contentDisplay="CENTER" layoutX="248.0" layoutY="179.0" mnemonicParsing="false" style="-fx-background-color: #bd93f9; -fx-background-radius: 3px; -fx-border-radius: 3px;" text="Operation" textAlignment="CENTER" textFill="#f8f8f2" wrapText="true">
+      <MenuButton fx:id="_seletorOperacao" alignment="CENTER" contentDisplay="CENTER" layoutX="248.0" layoutY="179.0" mnemonicParsing="false" style="-fx-background-color: #bd93f9; -fx-background-radius: 3px; -fx-border-radius: 3px;" text="Operation" textAlignment="CENTER" textFill="#f8f8f2" wrapText="true">
          <items>
-            <MenuItem fx:id="_somaOperacao" mnemonicParsing="false" onAction="#adicao" style="-fx-background-color: #bd93f9; -fx-border-insets: 0;" text="+" />
+            <MenuItem fx:id="_somaOperacao" mnemonicParsing="false" onAction="#adicao" text="+" />
             <MenuItem fx:id="_subtracaoOperacao" mnemonicParsing="false" onAction="#subtracao" text="-" />
             <MenuItem fx:id="_multiplicacaoOperacao" mnemonicParsing="false" onAction="#multiplicacao" text="*" />
             <MenuItem fx:id="_divisaoOperacao" mnemonicParsing="false" onAction="#divisao" text="/" />

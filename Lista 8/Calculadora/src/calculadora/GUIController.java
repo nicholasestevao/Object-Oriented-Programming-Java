@@ -120,7 +120,6 @@ public class GUIController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         c = new Calculadora();
-
         _inputNumeroA.textProperty().addListener( 
                 new ChangeListener<String>() { 
                     @Override
