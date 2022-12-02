@@ -2,6 +2,7 @@
 package exarquivos;
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class ExArquivos {
 
@@ -26,7 +27,10 @@ public class ExArquivos {
     }
     
     public static void main(String[] args) {
-        listaArquivos("C:\\Windows\\");
+        Scanner s = new Scanner(System.in);
+        System.out.println("Digite o diretório: ");
+        String diretorio = s.nextLine();
+        listaArquivos(diretorio);
     }
     
 }
