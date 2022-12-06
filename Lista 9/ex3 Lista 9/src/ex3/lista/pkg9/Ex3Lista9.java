@@ -41,7 +41,7 @@ public class Ex3Lista9 {
      */
     public static void main(String[] args) {
         try {
-            leArquivo("arquivo_13_linhas.txt");
+            leArquivo("./arquivo_13_linhas.txt");
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
