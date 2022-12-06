@@ -16,8 +16,7 @@ import java.io.IOException;
  */
 public class Ex4Lista9 {
     public static void escreveStreamArquivo(String texto, String nome_Arquivo) throws IOException {
-        File arquivo = new File(nome_Arquivo);
-        FileOutputStream escreve_arquivo = new FileOutputStream(arquivo);
+        FileOutputStream escreve_arquivo = new FileOutputStream(new File(nome_Arquivo));
 
         ByteArrayInputStream stream_texto = new ByteArrayInputStream(texto.getBytes());
 

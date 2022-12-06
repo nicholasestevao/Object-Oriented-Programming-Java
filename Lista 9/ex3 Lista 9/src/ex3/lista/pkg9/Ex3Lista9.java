@@ -16,24 +16,20 @@ import java.io.LineNumberReader;
 public class Ex3Lista9 {
     
     public static void leArquivo(String nome_arquivo) throws IOException {
-        FileReader arquivo = new FileReader(nome_arquivo);
-        LineNumberReader leitor = new LineNumberReader(arquivo);
-        
-        leitor.setLineNumber(0);
-        String linha = leitor.readLine();
-        while(linha != null) {
-            if(leitor.getLineNumber() == 10) {
-                System.out.println(linha  + " (Essa é a 10ª linha)");
-            } else {
-               System.out.println( linha);
-            }
-            linha = leitor.readLine();
+        int linha_atual;
+        try (LineNumberReader leitor = new LineNumberReader(new FileReader(nome_arquivo))) {
+            leitor.setLineNumber(0);
+            String linha = leitor.readLine();
+            while(linha != null) {
+                if(leitor.getLineNumber() == 10) {
+                    System.out.println(linha  + " (Essa é a 10ª linha)");
+                } else {
+                    System.out.println( linha);
+                }
+                linha = leitor.readLine();
+            }  
+            linha_atual = leitor.getLineNumber();
         }
-
-        int linha_atual = leitor.getLineNumber();
-        
-        leitor.close();
-        arquivo.close();
 
         if(linha_atual < 10) {
            throw new IOException(nome_arquivo +" (Esse arquivo possuí menos de 10 linhas)");
