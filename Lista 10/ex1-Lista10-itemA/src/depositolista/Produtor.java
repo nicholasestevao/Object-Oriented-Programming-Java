@@ -12,10 +12,11 @@ public class Produtor implements Runnable{
 
     @Override
     public void run() {
-        for(int i=0; i<10; i++){
+        for(int i=0; i<20; i++){
             int produto = i;
             deposito.recebe(this.nome, produto);
             System.out.println("Recebeu produto "+produto+" de "+nome);
+            System.out.println("Tamanho pilha: "+this.deposito.getTamanhoPilha());
         }
     }
     
