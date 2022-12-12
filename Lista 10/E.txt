@@ -1,0 +1,13 @@
+Teste A 
+Quantidade de números 1.0E7
+Tempo Total de execução 4.066 s
+Teste B 
+Número de Threads 12. Quantidade de números por Thread 833333.3333333334.
+Tempo Total de execução 3.797 s
+Teste C 
+Número de Threads 12. Quantidade de números por Thread 833333.3333333334.
+Tempo Total de execução 3.734 s
+Número de Threads 12. Quantidade de números por Thread 8333333.333333333.
+Tempo Total de execução 35.879 s
+Número de Threads 12. Quantidade de números por Thread 8.333333333333333E7.
+Tempo Total de execução 375.171 s
