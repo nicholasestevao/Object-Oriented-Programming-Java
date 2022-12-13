@@ -1,0 +1,13 @@
+Número de Threads: 12. Quantidade de números por Thread: 833333.3333333334.
+1) Tempo de execução: 0.14 s
+2) Tempo de execução: 0.063 s
+3) Tempo de execução: 0.062 s
+4) Tempo de execução: 0.031 s
+5) Tempo de execução: 0.047 s
+6) Tempo de execução: 0.047 s
+7) Tempo de execução: 0.047 s
+8) Tempo de execução: 0.047 s
+9) Tempo de execução: 0.031 s
+10) Tempo de execução: 0.047 s
+
+Tempo de execução total: 0,562 s

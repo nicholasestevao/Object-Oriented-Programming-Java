@@ -1,0 +1,19 @@
+SEM THREADS:
+Quantidade de números: 1.0E7
+Tempo Total de execução: 2.713 s
+Quantidade de números: 1.0E8
+Tempo Total de execução: 26.397 s
+Quantidade de números: 1.0E9
+Tempo Total de execução: 258.61 s
+
+COM THREADS:
+Número de Threads: 12. Quantidade de números por Thread: 833333,3333333334.
+Tempo Total de execução: 0.453 s
+Número de Threads: 12. Quantidade de números por Thread: 8333333,333333333.
+Tempo Total de execução: 3.203 s
+Número de Threads: 12. Quantidade de números por Thread: 8,333333333333333E7.
+Tempo Total de execução: 33.814 s
+Número de Threads: 12. Quantidade de números por Thread: 8,333333333333334E8.
+Tempo Total de execução: 323.125 s
+Número de Threads: 12. Quantidade de números por Thread: 8,333333333333334E9.
+Tempo Total de execução: 1800 s
