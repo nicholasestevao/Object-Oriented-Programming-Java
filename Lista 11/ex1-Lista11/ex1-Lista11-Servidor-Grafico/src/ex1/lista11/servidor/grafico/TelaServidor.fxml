@@ -17,6 +17,6 @@
       <Button fx:id="bConectar" layoutX="141.0" layoutY="119.0" mnemonicParsing="false" onAction="#conectar" text="Conectar" />
       <Label fx:id="lbConexao" layoutX="44.0" layoutY="164.0" prefHeight="18.0" prefWidth="258.0" />
       <Label layoutX="57.0" layoutY="101.0" text="ex: 8008" />
-      <Button fx:id="bSair" layoutX="209.0" layoutY="274.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
+      <Button fx:id="bSair" layoutX="209.0" layoutY="274.0" mnemonicParsing="false" onAction="#sair" text="Desconectar" />
     </children>
 </AnchorPane>
