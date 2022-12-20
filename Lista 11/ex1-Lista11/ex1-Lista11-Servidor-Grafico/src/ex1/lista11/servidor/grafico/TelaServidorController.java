@@ -22,23 +22,78 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class TelaServidorController implements Initializable {
     
     @FXML
-    private Label lblMsgCliente;
+    private Label lbMsgCliente;
+
+    @FXML
+    private Label lbConexao;
     
     @FXML
     private Button bEnviar;
     
     @FXML
-    private TextField txtMsgServidor;
+    private Button bSair;
+    
+    @FXML
+    private Button bConectar;
+    
+    @FXML
+    private TextField tfMsgServidor;
+    
+    /*@FXML
+    private TextField tfIP;*/
+    
+    @FXML
+    private TextField tfPorta;
     
     private PrintWriter ENVIA;
     
+    private Socket SERVIDOR_SOCKET;
+    
+    private Thread recebe;
+    
+    @FXML
+    public void sair(){
+        try{
+            ENVIA.println("BYE");
+            //this.recebe.join();
+            this.ENVIA.close();
+            this.SERVIDOR_SOCKET.close();
+            Stage stage = (Stage) this.lbMsgCliente.getScene().getWindow();
+            stage.close();
+        }catch( IOException e)
+        {
+            System.out.println("Erro: "+e.getMessage());
+        } 
+    }
+    
+    @FXML
+    public void conectar(){
+        try {
+            ServerSocket OUVIDO = new ServerSocket(Integer.parseInt(tfPorta.getText()));
+            this.SERVIDOR_SOCKET = OUVIDO.accept();
+            lbConexao.setText("Conectou com sucesso!");
+            System.out.println("Conectou");
+            // Thread Envia
+            this.ENVIA = new PrintWriter(new OutputStreamWriter(SERVIDOR_SOCKET.getOutputStream()));
+
+            //Thread Recebe
+            this.recebe = new Thread(new ThreadRecebe(SERVIDOR_SOCKET, lbMsgCliente, ENVIA));
+            recebe.start();
+            
+        } catch (IOException e) {
+            System.out.println("Erro: " + e.getMessage());
+            lbConexao.setText("Erro: " + e.getMessage());
+        }
+    }
+    
     @FXML
     public void enviarMensagem(){
-        String userInput = txtMsgServidor.getText();
+        String userInput = tfMsgServidor.getText();
         //System.out.println("Digitou: "+userInput);
         ENVIA.println("O servidor diz \"" + userInput +"\"");     
         ENVIA.flush();
@@ -46,32 +101,6 @@ public class TelaServidorController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
-            ServerSocket OUVIDO = new ServerSocket(8008);
-            Socket SERVIDOR_SOCKET = OUVIDO.accept();
-
-            // Thread Envia
-            this.ENVIA = new PrintWriter(new OutputStreamWriter(SERVIDOR_SOCKET.getOutputStream()));
-            
-            ObservableList<String> mensagens = FXCollections.observableArrayList(new ArrayList<String>());
-            mensagens.add(new String(""));
-            mensagens.addListener(
-                new ListChangeListener<String>() { 
-                @Override
-                public void onChanged(ListChangeListener.Change<? extends String> c) {
-                    lblMsgCliente.setText("recebeu algo");
-                }
-                }
-            );
-            //Thread Recebe
-            Thread recebe = new Thread(new ThreadRecebe(SERVIDOR_SOCKET, mensagens));
-            recebe.start();
-            
-        } catch (IOException e) {
-            System.out.println("Erro: " + e.getMessage());
-        }
-        
-
     }    
         
 }    

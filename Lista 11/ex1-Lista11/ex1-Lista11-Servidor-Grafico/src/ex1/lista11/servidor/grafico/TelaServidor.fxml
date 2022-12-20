@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ex1.lista11.servidor.grafico.TelaServidorController">
+<AnchorPane id="AnchorPane" prefHeight="365.0" prefWidth="347.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ex1.lista11.servidor.grafico.TelaServidorController">
     <children>
-        <Button fx:id="bEnviar" layoutX="136.0" layoutY="160.0" onAction="#enviarMensagem" text="Enviar" />
-        <Label fx:id="label" layoutX="114.0" layoutY="25.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="110.0" text="Tela do Servidor" />
-      <TextField fx:id="txtMsgServidor" layoutX="131.0" layoutY="123.0" />
-      <Label layoutX="14.0" layoutY="137.0" text="Sua mensagem:" />
-      <Label fx:id="lblMsgCliente" layoutX="96.0" layoutY="91.0" text="mensagem do cliente" />
-      <Label layoutX="78.0" layoutY="61.0" text="última mensagem recebida:" />
+        <Button fx:id="bEnviar" layoutX="119.0" layoutY="274.0" onAction="#enviarMensagem" text="Enviar" />
+        <Label fx:id="label" layoutX="118.0" layoutY="27.0" minHeight="16" minWidth="69" prefHeight="18.0" prefWidth="110.0" text="Tela do Servidor" />
+      <TextField fx:id="tfMsgServidor" layoutX="143.0" layoutY="235.0" />
+      <Label fx:id="lbSuaMsg" layoutX="26.0" layoutY="249.0" text="Sua mensagem:" />
+      <Label fx:id="lbMsgCliente" layoutX="35.0" layoutY="183.0" prefHeight="42.0" prefWidth="250.0" text="O cliente diz: &quot;&quot;" />
+      <Label layoutX="52.0" layoutY="79.0" text="Sua porta:" />
+      <TextField fx:id="tfPorta" layoutX="160.0" layoutY="75.0" />
+      <Button fx:id="bConectar" layoutX="141.0" layoutY="119.0" mnemonicParsing="false" onAction="#conectar" text="Conectar" />
+      <Label fx:id="lbConexao" layoutX="44.0" layoutY="164.0" prefHeight="18.0" prefWidth="258.0" />
+      <Label layoutX="57.0" layoutY="101.0" text="ex: 8008" />
+      <Button fx:id="bSair" layoutX="209.0" layoutY="274.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
     </children>
 </AnchorPane>
