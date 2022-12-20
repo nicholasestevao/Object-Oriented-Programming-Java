@@ -8,31 +8,20 @@ import java.net.Socket;
 
 public class ThreadRecebe implements Runnable {
     
-    private Socket CLIENTE_SOCKET;
+    private BufferedReader RECEBE;
     
-    ThreadRecebe(Socket cliente){
-        this.CLIENTE_SOCKET = cliente;
+    ThreadRecebe(BufferedReader RECEBE){
+        this.RECEBE = RECEBE;
     }
     
     @Override
     public void run() {
         try{
-            BufferedReader RECEBE = new BufferedReader(new InputStreamReader(CLIENTE_SOCKET.getInputStream()));
             String str = "";
-            while(str != null && str.compareTo("BYE") != 0){
+            while(str != null && str.compareTo("Cambio") != 0){
                 str = RECEBE.readLine();
                 System.out.println(str);  
             }
-
-            RECEBE.close();
-            /*BufferedReader RECEBE = new BufferedReader(new InputStreamReader(CLIENTE_SOCKET.getInputStream()));
-            String str = "";
-            while(str.compareTo("BYE") != 0){
-                str = RECEBE.readLine();
-                System.out.println(str);                         
-            }
-
-            RECEBE.close();*/
             
         } catch (IOException e) {
             System.out.println("Erro: " + e.getMessage());

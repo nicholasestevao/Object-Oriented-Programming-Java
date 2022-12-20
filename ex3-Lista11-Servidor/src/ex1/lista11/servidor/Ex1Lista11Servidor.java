@@ -23,27 +23,34 @@ public class Ex1Lista11Servidor {
             // Testa mensagem inicial
             //Fluxo de entrada do cliente para o servidor
             BufferedReader RECEBE = new BufferedReader(new InputStreamReader(SERVIDOR_SOCKET.getInputStream()));
+            
             //Fluxo de saida do servidor para o cliente
             PrintWriter ENVIA = new PrintWriter(new OutputStreamWriter(SERVIDOR_SOCKET.getOutputStream()));
+            
             String msg_recebida = "";
             msg_recebida = RECEBE.readLine();
             if(msg_recebida.compareTo("POO") == 0){
                 System.out.println("Conexao autenticada");
+                ENVIA.println(true);
+                ENVIA.flush();
                 Thread recebe = new Thread(new ThreadRecebe(RECEBE));
                 recebe.start();
 
                 recebe.join();
-                System.out.println("Terminou de receber mensagens");
+                System.out.println("Servidor terminou de receber mensagens");
+                
                 Thread envia = new Thread(new ThreadEnvia(ENVIA));
                 envia.start();
 
-                envia.join();
-                System.out.println("Terminou de enviar mensagens");
+                envia.join();                
+                System.out.println("Servidor terminou de enviar mensagens");
             }else{
                 System.out.println("Conexao nao autenticada");
+                ENVIA.println(false);
+                ENVIA.flush();
             }
             
-            RECEBE.close();
+            RECEBE.close();   
             ENVIA.close();
             SERVIDOR_SOCKET.close();
 

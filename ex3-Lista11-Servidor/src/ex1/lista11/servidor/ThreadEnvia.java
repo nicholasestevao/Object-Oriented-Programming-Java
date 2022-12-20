@@ -22,7 +22,6 @@ public class ThreadEnvia implements Runnable{
             String userInput = "";
             while(userInput.compareTo("Cambio") != 0){
                 userInput = LEITOR_ENTRADA_PADRAO.readLine();
-                //System.out.println("Digitou: "+userInput);
                 ENVIA.println(userInput);     
                 ENVIA.flush();
             }
