@@ -1,23 +1,23 @@
-package servidor;
+package executavel;
+
+import java.io.Serializable;
 import java.util.Random;
 
-public class UsuarioPadrao implements Executavel {
+public class UsuarioPadrao implements Executavel, Serializable {
     private int id;
     private int ping;
     private Random aleatorio = new Random();
 
-    UsuarioPadrao(){
+    public UsuarioPadrao(){
         id = aleatorio.nextInt(10000);
         ping =  aleatorio.nextInt(1000);
     }
     
-    @Override
     public void testeConexao() {
         ping =  aleatorio.nextInt(1000);
         System.out.println("ping do usuario " + id + " : " + ping);
     }
 
-    @Override
     public void tempoCarregamento() {
         testeConexao();
         if(ping < 100){

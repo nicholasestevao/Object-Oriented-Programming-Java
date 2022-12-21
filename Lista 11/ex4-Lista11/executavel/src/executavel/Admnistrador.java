@@ -1,7 +1,9 @@
-package servidor;
+package executavel;
+import executavel.Executavel;
+import java.io.Serializable;
 import java.util.Random;
 
-public class Admnistrador implements Executavel {
+public class Admnistrador implements Executavel, Serializable {
     private int idAdm;
     private int ping;
     private Random aleatorio = new Random();
@@ -11,13 +13,11 @@ public class Admnistrador implements Executavel {
         ping =  aleatorio.nextInt(1000);
     }
     
-    @Override
     public void testeConexao() {
         ping =  aleatorio.nextInt(1000);
         System.out.println("ping do Administrador " + idAdm + " : " + ping);
     }
-
-    @Override
+    
     public void tempoCarregamento() {
         testeConexao();
         if(ping < 100){

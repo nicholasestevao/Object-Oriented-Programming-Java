@@ -4,51 +4,47 @@ package cliente;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.net.ServerSocket;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
+import executavel.*;
 
 public class Ex4Lista11Cliente {
     public static void main(String[] args) {
         try {
-            Socket CLIENTE_SOCKET = new Socket("localhost", 8008);     
-            OutputStreamWriter saida = new OutputStreamWriter(CLIENTE_SOCKET.getOutputStream());
+            Socket CLIENTE_SOCKET = new Socket("localhost", 8008);
         
-            PrintWriter ENVIA = new PrintWriter(new OutputStreamWriter(CLIENTE_SOCKET.getOutputStream()));
-            
-            BufferedReader RECEBE = new BufferedReader(new InputStreamReader(CLIENTE_SOCKET.getInputStream()));
-            //Mensagem inicial para autenticar conexao
+            OutputStream outputStream = CLIENTE_SOCKET.getOutputStream();
 
+            ObjectOutputStream ENVIA = new ObjectOutputStream(outputStream);
+                       
             BufferedReader LEITOR_ENTRADA_PADRAO = new BufferedReader(new InputStreamReader(System.in));
-            String msg_inicial = "";
-            msg_inicial = LEITOR_ENTRADA_PADRAO.readLine();
-            ENVIA.println(msg_inicial); 
-            ENVIA.flush();
-            String res_autenticacao = RECEBE.readLine();
             
-            if(res_autenticacao.equals("true")){
-                System.out.println("Conexao autenticada");
-                Thread envia = new Thread(new ThreadEnvia(ENVIA));
-                envia.start();
-                envia.join();
-                System.out.println("Cliente terminou de enviar mensagens");
-
-                Thread recebe = new Thread(new ThreadRecebe(RECEBE));
-                recebe.start();
-                recebe.join();
-                System.out.println("Cliente terminou de receber mensagens");
-            }else{
-                System.out.println("Conexao nao autenticada");
+            Thread recebe = new Thread(new ThreadRecebe(CLIENTE_SOCKET));
+             
+            ArrayList<Executavel> objetos = new ArrayList();
+            objetos.add(new Admnistrador());
+            objetos.add(new UsuarioPadrao());
+            
+            String userInput = null;
+            while(userInput == null){
+                userInput = LEITOR_ENTRADA_PADRAO.readLine();
+                if(userInput.equals("enviar") || userInput.equals("Enviar")) {
+                    recebe.start();
+                    ENVIA.writeObject(objetos);
+                    ENVIA.flush();
+                    recebe.join();
+                } else {
+                    userInput = null;
+                }
             }
             
-            LEITOR_ENTRADA_PADRAO.close();
             ENVIA.close();
-            RECEBE.close();
-            CLIENTE_SOCKET.close();
-
+            LEITOR_ENTRADA_PADRAO.close();
+            
         } catch (IOException | InterruptedException e) {
-            System.out.println("Erro: " + e.getMessage());
+            System.out.println("Erro: " + e.getMessage() + e.getLocalizedMessage());
         }
     }
     
