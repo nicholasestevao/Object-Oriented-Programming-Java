@@ -1,0 +1,23 @@
+Acredito que as opções de bloqueio escolhidas são as que mais garantem o paralelismo dadas as condições de execução das operações de saque e depósito.
+Como essas operações devem ser executadas em três etapas (envolvendo variaveis locais), como pedido no enunciado, a forma mais eficente de bloqueio
+é a que envolve somente essas etapas. Isso fica mais evidente na operação de deposito, porém o mesmo ocorre na função de saque junto com a verificação
+do saldo negativo.
+
+DEPOSITO:
+token_bloqueio.lock();
+int novo_saldo = this->saldo;
+novo_saldo += valor;
+this->saldo = novo_saldo;
+token_bloqueio.unlock();
+
+SAQUE:
+token_bloqueio.lock();
+int novo_saldo = this->saldo;
+if(valor < novo_saldo){ //saldo positivo
+    novo_saldo -= valor;
+    this->saldo = novo_saldo;
+}else{// valor >= novo_saldo
+    novo_saldo = 0;
+    this->saldo = novo_saldo;
+}
+token_bloqueio.unlock();
