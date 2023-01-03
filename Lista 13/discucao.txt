@@ -1,0 +1,3 @@
+O program em Java teve tempos maiores que o programa equivaltente em C++. 
+Por ser uma linguagem interpretada esse resultado é o esperado, pois ele é executado por meio de uma maquina virtual que intepretará o código enquanto ele é executado.
+Já C++ por ser uma linguagem compilada consegue obter melhores desempenhos ao se compilar específicametne para cada máquina onde será utilizado o programa. Mas caso o programa seja compilado de forma "genérica" o programa em Java pode ter resultados melhores devido ao baixo nível de otmização na compilação do programa em C++.
