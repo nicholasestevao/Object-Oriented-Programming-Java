@@ -22,24 +22,77 @@ using namespace std;
 int main(int argc, char** argv) {
     ArvoreBinaria<int> raiz;
     
-    raiz.inserir(2);
-    raiz.inserir(0);
-    raiz.inserir(4);
-    raiz.inserir(5);
-    raiz.inserir(1);
-    raiz.inserir(3);
+    int item = 2;
+    cout << "Inserindo: " << item << endl;
+    raiz.inserir(item);
+    
+    item = 0;
+    cout << "Inserindo: " << item << endl;
+    raiz.inserir(item);
+        
+    item = 3;
+    cout << "Inserindo: " << item << endl;
+    raiz.inserir(item);
+    
+    item = 5;
+    cout << "Inserindo: " << item << endl;
+    raiz.inserir(item);
+    
+    item = 1;
+    cout << "Inserindo: " << item << endl;
+    raiz.inserir(item);
+    
+    item = 4;
+    cout << "Inserindo: " << item << endl << endl;
+    raiz.inserir(item);
 
     raiz.imprimeOrdenadoCrescente();
     
-    int item_buscado = -512;
+    item = -512;
     
-    cout << endl << "Buscando: " << item_buscado << endl;
-    int* r = raiz.busca(item_buscado);
+    cout << endl << "Buscando: " << item << endl;
+    int* r = raiz.busca(item);
     if(r != nullptr) {
         cout << "   Encontrei o " << *r  << endl;
     } else {
         cout << "   Nao encontrei..." << endl;
     }
+    
+    item = 2;
+    cout << endl << "Removendo " << item << endl;
+    raiz.remove(item);
+    cout <<"    Removido: " << item << endl;
+    raiz.imprimeOrdenadoCrescente();
+    
+    item = 0;
+    cout << endl << "Removendo " << item << endl;
+    raiz.remove(item);
+    cout <<"    Removido: " << item << endl;
+    raiz.imprimeOrdenadoCrescente();
+   
+    item = 5;
+    cout << endl << "Removendo " << item << endl;
+    raiz.remove(item);
+    cout <<"    Removido: " << item << endl;
+    raiz.imprimeOrdenadoCrescente();
+    
+    item = 3;
+    cout << endl << "Removendo " << item << endl;
+    raiz.remove(item);
+    cout <<"    Removido: " << item << endl;
+    raiz.imprimeOrdenadoCrescente();
+    
+    item = 1;
+    cout << endl << "Removendo " << item << endl;
+    raiz.remove(item);
+    cout <<"    Removido: " << item << endl;
+    raiz.imprimeOrdenadoCrescente();
+    
+    item = 4;
+    cout << endl << "Removendo " << item << endl;
+    raiz.remove(item);
+    cout <<"    Removido: " << item << endl;
+    raiz.imprimeOrdenadoCrescente();
     
     return 0;
 }
