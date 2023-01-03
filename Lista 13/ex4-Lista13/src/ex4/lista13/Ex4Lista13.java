@@ -12,12 +12,12 @@ public class Ex4Lista13 {
 
     public static void main(String[] args) {
         
-        long tamMax = 60000;
         Random r = new Random();
         long t_inicio;
         long t_final;
 
         // Teste 1 - Array List
+        long tamMax = 90000;
         ArrayList<Double> al = new ArrayList();
         t_inicio = System.currentTimeMillis();
         for(int i = 0; i< tamMax; i++){
@@ -45,7 +45,7 @@ public class Ex4Lista13 {
         
         
         // Teste 2 - Linked List
-        tamMax = 40000;
+        tamMax = 60000;
         LinkedList<Double> ll = new LinkedList();
         t_inicio = System.currentTimeMillis();
         for(int i = 0; i< tamMax; i++){
@@ -82,7 +82,7 @@ public class Ex4Lista13 {
         
         
         // Teste 3 - Array Deque
-        tamMax = 50000;
+        tamMax = 90000;
         ArrayDeque<Double> ad = new ArrayDeque();
         t_inicio = System.currentTimeMillis();
         for(i = 0; i< tamMax/2; i++){
