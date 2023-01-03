@@ -13,7 +13,7 @@ int main(int argc, char** argv) {
     cout << "Soma: "  << p->getSum() <<endl <<endl;
     
     Par<string> *p2 = new Par<string>("Oi ", "tudo bem?");
-    cout << "Par 2: char" <<endl;
+    cout << "Par 2: string" <<endl;
     cout << "Maximo: "  << p2->getMax() <<endl;
     cout << "Minimo: "  << p2->getMin() <<endl;
     cout << "Soma: "  << p2->getSum() <<endl;
