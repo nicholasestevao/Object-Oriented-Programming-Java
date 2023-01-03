@@ -81,7 +81,7 @@ public class Ex4Lista13 {
         System.out.println((t_final - t_inicio)/1000 + "s para " + tamMax + " doubles na LinkedList.");
         
         
-        // Teste 2 - Array Deque
+        // Teste 3 - Array Deque
         tamMax = 50000;
         ArrayDeque<Double> ad = new ArrayDeque();
         t_inicio = System.currentTimeMillis();
