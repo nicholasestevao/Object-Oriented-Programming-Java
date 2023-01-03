@@ -21,13 +21,13 @@ public class Ex4Lista13 {
         ArrayList<Double> al = new ArrayList();
         t_inicio = System.currentTimeMillis();
         for(int i = 0; i< tamMax; i++){
-           al.add(r.nextDouble()*10000);
+           al.add(r.nextDouble());
         }
         for(int i = 0; i< tamMax; i++){
             System.out.println((i+1) + "° elemento: "+ al.get(i));
         }
         for(int i = 0; i< tamMax/2; i++){
-           double buscado = r.nextDouble()*10000;
+           double buscado = r.nextDouble();
            System.out.println("Buscando "+ buscado);
            for(int j = 0; j< tamMax; j++){
                if(al.get(j) == buscado){
@@ -36,9 +36,12 @@ public class Ex4Lista13 {
                }
            }
         }
+        /*
         for(long i = tamMax-1; i>=0; i--){
             al.remove((int) i);
         }
+        */
+        al.clear();
         t_final = System.currentTimeMillis();
         long t_array_list = (t_final - t_inicio)/1000;
         System.out.println((t_final - t_inicio)/1000 + "s para " + tamMax + " doubles no ArrayList.");
@@ -49,7 +52,7 @@ public class Ex4Lista13 {
         LinkedList<Double> ll = new LinkedList();
         t_inicio = System.currentTimeMillis();
         for(int i = 0; i< tamMax; i++){
-           ll.addLast(r.nextDouble()*10000);
+           ll.addLast(r.nextDouble());
         }
         Iterator itll = ll.iterator();
         int i = 0;
@@ -58,7 +61,7 @@ public class Ex4Lista13 {
             i++;
         }
         for(i = 0; i< tamMax/2; i++){
-           double buscado = r.nextDouble()*10000;
+           double buscado = r.nextDouble();
            System.out.println("Buscando "+ buscado);
            itll = ll.iterator();
             int j = 0;
@@ -71,11 +74,13 @@ public class Ex4Lista13 {
                 j++;
             }
         }
+        /*
         itll = ll.iterator();
          while (itll.hasNext()) {
             itll.next();
             itll.remove();
-        }
+        }*/
+        ll.clear();
         t_final = System.currentTimeMillis();
         long t_linked_list = (t_final - t_inicio)/1000;
         System.out.println((t_final - t_inicio)/1000 + "s para " + tamMax + " doubles na LinkedList.");
@@ -85,9 +90,8 @@ public class Ex4Lista13 {
         tamMax = 90000;
         ArrayDeque<Double> ad = new ArrayDeque();
         t_inicio = System.currentTimeMillis();
-        for(i = 0; i< tamMax/2; i++){
-           ad.addFirst(r.nextDouble()*10000);
-           ad.addLast(r.nextDouble()*10000);
+        for(i = 0; i< tamMax; i++){
+           ad.addFirst(r.nextDouble());
         }
         Iterator it = ad.iterator();
         i = 0;
@@ -97,7 +101,7 @@ public class Ex4Lista13 {
         }
         
         for( i = 0; i< tamMax/2; i++){
-            double buscado = r.nextDouble()*10000;
+            double buscado = r.nextDouble();
             System.out.println("Buscando "+ buscado);
             it = ad.iterator();
             int j = 0;
@@ -110,11 +114,13 @@ public class Ex4Lista13 {
                 j++;
             }
         }
+        /*
         it = ad.iterator();
          while (it.hasNext()) {
             it.next();
             it.remove();
-        }
+        }*/
+        ad.clear();
         t_final = System.currentTimeMillis();
         long t_array_deque = (t_final - t_inicio)/1000;
         System.out.println((t_final - t_inicio)/1000 + "s para " + tamMax + " doubles no ArrayDeque.");
