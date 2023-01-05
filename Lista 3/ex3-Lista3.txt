@@ -1,0 +1,1 @@
+Ao transformar a Classe Predio em uma classe abstrata o programa só irá compilar caso hajam metodos get/set para acesso do atributo privado consumo_energia, para que as classes Casa e Escola possam acessar e alterar o atributo de consumo_energia.
