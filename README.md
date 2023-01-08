@@ -22,7 +22,7 @@ Cada classe cujo o telefone é composto deve ter no mínimo 2 funcionalidaes uma
   
 ### Exercío 2 - Drivers
 
-No exercícoi 2 devemos imaginar quais atributos e funções definem um driver e implementar drivers para dispositivos de rede, de impressão e de vídeo.
+No exercício 2 devemos imaginar quais atributos e funções definem um driver e implementar drivers para dispositivos de rede, de impressão e de vídeo.
 Todo driver possui funcionalidades e dados como ligaDispositivo, verificaStatus e executaTeste. Mas cada driver para um dispositivo específico
 possui funcionalidades específicas, como enviaPacoteDeDados, imprimePaginas e alteraBrilhoDeExibicao.  
 
